@@ -33,6 +33,18 @@
                 android:layout_marginTop="10dp"
                 app:srcCompat="@drawable/whatsapp"
                 app:tint="#4CAF50" />
+            <TextView
+                android:id="@+id/girli_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:fontFamily="sans-serif"
+                android:gravity="center"
+                android:text="girlname"
+                android:textColor="#050505"
+                android:textStyle="bold" />
+
 
         </LinearLayout>
 

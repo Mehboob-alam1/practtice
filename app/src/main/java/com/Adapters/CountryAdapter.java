@@ -56,8 +56,8 @@ public class CountryAdapter extends RecyclerView.Adapter<CountryAdapter.viewHold
                 switch (position) {
                     case 0:
                         Intent intent=new Intent(holder.itemView.getContext(),ContactsActivity.class);
-//                        Intent intent = new Intent(context, ContactsActivity.class);
                         intent.putExtra("country",position);
+
                         context.startActivity(intent);
                         break;
 
@@ -66,6 +66,74 @@ public class CountryAdapter extends RecyclerView.Adapter<CountryAdapter.viewHold
                         intent1.putExtra("country",position);
                         context.startActivity(intent1);
                         break;
+
+                    case 2:
+                        Intent intent2 = new Intent(context, ContactsActivity.class);
+                        intent2.putExtra("country",position);
+                        context.startActivity(intent2);
+                        break;
+                    case 3:
+                        Intent intent3 = new Intent(context, ContactsActivity.class);
+                        intent3.putExtra("country",position);
+                        context.startActivity(intent3);
+                        break;
+                    case 4:
+                        Intent intent4 = new Intent(context, ContactsActivity.class);
+                        intent4.putExtra("country",position);
+                        context.startActivity(intent4);
+                        break;
+                    case 5:
+                        Intent intent5 = new Intent(context, ContactsActivity.class);
+                        intent5.putExtra("country",position);
+                        context.startActivity(intent5);
+                        break;
+                    case 6:
+                        Intent intent6 = new Intent(context, ContactsActivity.class);
+                        intent6.putExtra("country",position);
+                        context.startActivity(intent6);
+                        break;
+                    case 7:
+                        Intent intent7 = new Intent(context, ContactsActivity.class);
+                        intent7.putExtra("country",position);
+                        context.startActivity(intent7);
+                        break;
+                    case 8:
+                        Intent intent8 = new Intent(context, ContactsActivity.class);
+                        intent8.putExtra("country",position);
+                        context.startActivity(intent8);
+                        break;
+
+                    case 9:
+                        Intent intent9 = new Intent(context, ContactsActivity.class);
+                        intent9.putExtra("country",position);
+                        context.startActivity(intent9);
+                        break;
+                    case 10:
+                        Intent intent10 = new Intent(context, ContactsActivity.class);
+                        intent10.putExtra("country",position);
+                        context.startActivity(intent10);
+                        break;
+                    case 11:
+                        Intent intent11 = new Intent(context, ContactsActivity.class);
+                        intent11.putExtra("country",position);
+                        context.startActivity(intent11);
+                        break;
+                    case 12:
+                        Intent intent12 = new Intent(context, ContactsActivity.class);
+                        intent12.putExtra("country",position);
+                        context.startActivity(intent12);
+                        break;
+                    case 13:
+                        Intent intent13 = new Intent(context, ContactsActivity.class);
+                        intent13.putExtra("country",position);
+                        context.startActivity(intent13);
+                        break;
+                    case 14:
+                        Intent intent14 = new Intent(context, ContactsActivity.class);
+                        intent14.putExtra("country",position);
+                        context.startActivity(intent14);
+                        break;
+
                 }
 
             }

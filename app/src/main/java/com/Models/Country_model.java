@@ -1,7 +1,7 @@
 package com.Models;
 
 public class Country_model {
-    int country_pic,whatsapp_pic;
+    int country_pic, whatsapp_pic;
     String text;
 
     public int getCountry_pic() {

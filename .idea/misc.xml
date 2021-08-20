@@ -3,12 +3,18 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/UUUUU/AndroidStudioProjects/Realsexygirlsmobilenumbersforvideochat/app/src/main/res/drawable/bg_profile.xml" value="0.2203125" />
+        <entry key="..\:/Users/UUUUU/AndroidStudioProjects/Realsexygirlsmobilenumbersforvideochat/app/src/main/res/drawable/btn_bg.xml" value="1.0964285714285715" />
+        <entry key="..\:/Users/UUUUU/AndroidStudioProjects/Realsexygirlsmobilenumbersforvideochat/app/src/main/res/drawable/line.xml" value="0.2203125" />
         <entry key="..\:/Users/UUUUU/AndroidStudioProjects/Realsexygirlsmobilenumbersforvideochat/app/src/main/res/layout/activity_contacts.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/UUUUU/AndroidStudioProjects/Realsexygirlsmobilenumbersforvideochat/app/src/main/res/layout/activity_country_select.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/UUUUU/AndroidStudioProjects/Realsexygirlsmobilenumbersforvideochat/app/src/main/res/layout/activity_main.xml" value="0.19010416666666666" />
+        <entry key="..\:/Users/UUUUU/AndroidStudioProjects/Realsexygirlsmobilenumbersforvideochat/app/src/main/res/layout/activity_profile.xml" value="0.25" />
         <entry key="..\:/Users/UUUUU/AndroidStudioProjects/Realsexygirlsmobilenumbersforvideochat/app/src/main/res/layout/contacts_sample.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/UUUUU/AndroidStudioProjects/Realsexygirlsmobilenumbersforvideochat/app/src/main/res/layout/custom_toolbar.xml" value="0.22" />
         <entry key="..\:/Users/UUUUU/AndroidStudioProjects/Realsexygirlsmobilenumbersforvideochat/app/src/main/res/layout/sample_contacts.xml" value="0.22" />
         <entry key="..\:/Users/UUUUU/AndroidStudioProjects/Realsexygirlsmobilenumbersforvideochat/app/src/main/res/layout/sample_layout.xml" value="0.22" />
+        <entry key="..\:/Users/UUUUU/AndroidStudioProjects/Realsexygirlsmobilenumbersforvideochat/app/src/main/res/layout/sample_profile.xml" value="0.25" />
       </map>
     </option>
   </component>

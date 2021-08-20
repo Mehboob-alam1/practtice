@@ -15,7 +15,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.Models.ContactsModel;
 import com.Models.Country_model;
+import com.Models.ProfileModel;
 import com.example.realsexygirlsmobilenumbersforvideochat.ContactsActivity;
+import com.example.realsexygirlsmobilenumbersforvideochat.ProfileActivity;
 import com.example.realsexygirlsmobilenumbersforvideochat.R;
 
 import java.util.ArrayList;
@@ -42,6 +44,20 @@ public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.viewHo
         ContactsModel model = contactsModels.get(position);
         holder.girlImage.setImageResource(model.getGirlImage());
         holder.whatsappIcon.setImageResource(model.getWhatsappIcon());
+        holder.girlName.setText(model.getGirlName());
+        holder.girlImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(context, "item " + position, Toast.LENGTH_SHORT).show();
+               Intent intent= new Intent(holder.itemView.getContext(), ProfileActivity.class);
+               intent.putExtra("image",model.getGirlImage());
+               intent.putExtra("age",model.getAge());
+               intent.putExtra("country",model.getCountry());
+               context.startActivity(intent);
+
+
+            }
+        });
 
     }
 
@@ -53,11 +69,12 @@ public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.viewHo
 
     public class viewHolder extends RecyclerView.ViewHolder {
         ImageView girlImage, whatsappIcon;
-
+   TextView girlName;
 
         public viewHolder(@NonNull View itemView) {
             super(itemView);
-            girlImage = itemView.findViewById(R.id.girls_Image);
+girlName=itemView.findViewById(R.id.girli_name);
+        girlImage = itemView.findViewById(R.id.girls_Image);
             whatsappIcon = itemView.findViewById(R.id.whatsapp_icon);
         }
     }
