@@ -3,6 +3,8 @@ package com.example.realsexygirlsmobilenumbersforvideochat;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -42,9 +44,11 @@ public class ProfileActivity extends AppCompatActivity {
         setContentView(R.layout.activity_profile);
         countryName=findViewById(R.id.contary_text);
         Age=findViewById(R.id.age_txt);
+
         //INTERSTITIAL AD
+
         AdRequest adRequest = new AdRequest.Builder().build();
-        InterstitialAd.load(this,"ca-app-pub-3940256099942544/1033173712", adRequest,
+        InterstitialAd.load(this,"ca-app-pub-6406856513627612/5043549014", adRequest,
                 new InterstitialAdLoadCallback() {
                     @Override
                     public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
@@ -67,6 +71,8 @@ public class ProfileActivity extends AppCompatActivity {
        contact.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View view) {
+
+
                if (mInterstitialAd != null) {
                    mInterstitialAd.show(ProfileActivity.this);
                    finish();

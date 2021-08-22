@@ -115,7 +115,7 @@
                 android:layout_height="47dp"
                 android:background="@drawable/btn_bg"
                 android:gravity="center"
-                android:text="Copy Number"
+                android:text="@string/watch_ad_ncopy_number"
                 android:textColor="#FFFDFD"
                 android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -134,7 +134,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         app:adSize="BANNER"
-        app:adUnitId="ca-app-pub-3940256099942544/6300978111"
+        app:adUnitId="ca-app-pub-6406856513627612/6356630686"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
