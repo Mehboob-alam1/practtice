@@ -5,20 +5,55 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
 import com.Adapters.CountryAdapter;
 import com.Models.Country_model;
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.LoadAdError;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 
 public class country_select extends AppCompatActivity {
   RecyclerView recyclerView;
+  private AdView mAdView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_country_select);
         recyclerView=findViewById(R.id.recycler_view);
+//
+        MobileAds.initialize(this, new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(InitializationStatus initializationStatus) {
+            }
+        });
+        mAdView = findViewById(R.id.adView1);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
+        mAdView.setAdListener(new AdListener() {
+            @Override
+            public void onAdLoaded() {
+                // Code to be executed when an ad finishes loading.
+                super.onAdLoaded();
+                Toast.makeText(country_select.this, "Ad Loaded", Toast.LENGTH_SHORT).show();
+            }
 
+            @Override
+            public void onAdFailedToLoad(LoadAdError adError) {
+                // Code to be executed when an ad request fails.
+                mAdView.loadAd(adRequest);
+            }
+
+
+
+        });
         ArrayList<Country_model> country_list = new ArrayList<>();
         country_list.add(new Country_model(R.drawable.austrailia,R.drawable.whatsapp,"Austrailia"));
         country_list.add(new Country_model(R.drawable.bangladesh,R.drawable.whatsapp,"Bangladesh"));

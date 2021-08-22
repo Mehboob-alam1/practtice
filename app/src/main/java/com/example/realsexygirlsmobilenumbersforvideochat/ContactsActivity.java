@@ -1,32 +1,60 @@
 package com.example.realsexygirlsmobilenumbersforvideochat;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toolbar;
 
 import com.Adapters.ContactsAdapter;
 import com.Models.ContactsModel;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.LoadAdError;
+import com.google.android.gms.ads.interstitial.InterstitialAd;
+import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
 
 import java.util.ArrayList;
 
 public class ContactsActivity extends AppCompatActivity {
     RecyclerView recyclerView;
+    private InterstitialAd mInterstitialAd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contacts);
 
+        AdRequest adRequest = new AdRequest.Builder().build();
+
+        InterstitialAd.load(this,"ca-app-pub-3940256099942544/1033173712", adRequest,
+                new InterstitialAdLoadCallback() {
+                    @Override
+                    public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
+                        // The mInterstitialAd reference will be null until
+                        // an ad is loaded.
+                        mInterstitialAd = interstitialAd;
+                        Log.i("TAG", "onAdLoaded");
+                    }
+
+                    @Override
+                    public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
+                        // Handle the error
+                        Log.i("TAG", loadAdError.getMessage());
+                        mInterstitialAd = null;
+                    }
+
+                });
 
         recyclerView = findViewById(R.id.recycler_contact);
 
         int country_position = getIntent().getIntExtra("country", 0);
 
         if (country_position == 0) {
+
             ArrayList<ContactsModel> australia = new ArrayList<>();
             australia.add(new ContactsModel(R.drawable.image, R.drawable.whatsapp, "Lesbon","27","Austrailia"));
             australia.add(new ContactsModel(R.drawable.image_6, R.drawable.whatsapp, "Maria","22","Austrailia"));
@@ -288,4 +316,15 @@ public class ContactsActivity extends AppCompatActivity {
         }
 
     }
+    @Override
+    public void onBackPressed() {
+        if (mInterstitialAd != null) {
+            mInterstitialAd.show(ContactsActivity.this);
+            finish();
+        } else {
+            Log.d("TAG", "The interstitial ad wasn't ready yet.");
+        }
+
+
+       }
 }

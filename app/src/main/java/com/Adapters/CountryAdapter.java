@@ -22,9 +22,6 @@ import com.Models.Country_model;
 public class CountryAdapter extends RecyclerView.Adapter<CountryAdapter.viewHolder> {
 
     ArrayList<Country_model> countrylist;
-    //
-//    ArrayList<ContactsModel> contactsModels;
-
     Context context;
 
 
@@ -52,7 +49,6 @@ public class CountryAdapter extends RecyclerView.Adapter<CountryAdapter.viewHold
         holder.country_image.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(context, "item " + position, Toast.LENGTH_SHORT).show();
                 switch (position) {
                     case 0:
                         Intent intent=new Intent(holder.itemView.getContext(),ContactsActivity.class);
