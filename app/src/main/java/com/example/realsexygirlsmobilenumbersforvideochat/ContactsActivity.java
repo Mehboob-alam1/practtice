@@ -5,9 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.media.Image;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toolbar;
 
 import com.Adapters.ContactsAdapter;
@@ -22,12 +24,20 @@ import java.util.ArrayList;
 public class ContactsActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     private InterstitialAd mInterstitialAd;
+    ImageView img;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contacts);
+img=findViewById(R.id.back_btn);
+img.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View view) {
+        finish();
 
+    }
+});
         AdRequest adRequest = new AdRequest.Builder().build();
 
         InterstitialAd.load(this,"ca-app-pub-6406856513627612/5043549014", adRequest,

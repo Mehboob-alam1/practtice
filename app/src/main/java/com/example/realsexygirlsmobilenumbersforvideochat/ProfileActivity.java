@@ -3,11 +3,13 @@ package com.example.realsexygirlsmobilenumbersforvideochat;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -36,16 +38,24 @@ public class ProfileActivity extends AppCompatActivity {
   TextView countryName,Age,contact;
   private AdView mAdView;
     private InterstitialAd mInterstitialAd;
-
+ImageView img;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
         countryName=findViewById(R.id.contary_text);
+        img =findViewById(R.id.back_btn);
         Age=findViewById(R.id.age_txt);
 
         //INTERSTITIAL AD
+
+        img.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
 
         AdRequest adRequest = new AdRequest.Builder().build();
         InterstitialAd.load(this,"ca-app-pub-6406856513627612/5043549014", adRequest,
@@ -55,7 +65,7 @@ public class ProfileActivity extends AppCompatActivity {
                         // The mInterstitialAd reference will be null until
                         // an ad is loaded.
                         mInterstitialAd = interstitialAd;
-                        Log.i("TAG", "onAdLoaded");
+//                        Log.i("TAG", "onAdLoaded");
                     }
 
                     @Override
@@ -77,7 +87,7 @@ public class ProfileActivity extends AppCompatActivity {
                    mInterstitialAd.show(ProfileActivity.this);
                    finish();
                } else {
-                   Log.d("TAG", "The interstitial ad wasn't ready yet.");
+//                   Log.d("TAG", "The interstitial ad wasn't ready yet.");
                }
            }
        });
@@ -95,7 +105,7 @@ public class ProfileActivity extends AppCompatActivity {
             public void onAdLoaded() {
                 // Code to be executed when an ad finishes loading.
                 super.onAdLoaded();
-                Toast.makeText(ProfileActivity.this, "Ad Loaded", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(ProfileActivity.this, "Ad Loaded", Toast.LENGTH_SHORT).show();
             }
 
             @Override

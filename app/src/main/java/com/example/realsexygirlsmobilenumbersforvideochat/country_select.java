@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -23,10 +24,18 @@ import com.google.android.gms.ads.initialization.OnInitializationCompleteListene
 public class country_select extends AppCompatActivity {
   RecyclerView recyclerView;
   private AdView mAdView;
+  ImageView img;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_country_select);
+        img=findViewById(R.id.back_btn);
+        img.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
         recyclerView=findViewById(R.id.recycler_view);
 //
         MobileAds.initialize(this, new OnInitializationCompleteListener() {
@@ -42,7 +51,7 @@ public class country_select extends AppCompatActivity {
             public void onAdLoaded() {
                 // Code to be executed when an ad finishes loading.
                 super.onAdLoaded();
-                Toast.makeText(country_select.this, "Ad Loaded", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(country_select.this, "Ad Loaded", Toast.LENGTH_SHORT).show();
             }
 
             @Override

@@ -48,7 +48,7 @@ public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.viewHo
         holder.girlImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(context, "item " + position, Toast.LENGTH_SHORT).show();
+//                Toast.makeText(context, "item " + position, Toast.LENGTH_SHORT).show();
                Intent intent= new Intent(holder.itemView.getContext(), ProfileActivity.class);
                intent.putExtra("image",model.getGirlImage());
                intent.putExtra("age",model.getAge());

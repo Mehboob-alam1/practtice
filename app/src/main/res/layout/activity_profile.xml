@@ -6,16 +6,30 @@
     android:layout_height="match_parent"
     tools:context=".ProfileActivity">
 
-    <include
-        android:id="@+id/toolbar"
-        layout="@layout/custom_toolbar"
+    <RelativeLayout
+
+        android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="#A6043B"
+        android:padding="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/back_btn"
+            android:layout_width="30dp"
+            android:layout_height="100dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:src="@drawable/left_arrow"
+            app:tint="@color/white"
+            tools:ignore="OnClick" />
+
+
+    </RelativeLayout>
 
 
     <de.hdodenhof.circleimageview.CircleImageView
@@ -26,12 +40,12 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="108dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="12dp"
         android:layout_marginEnd="108dp"
         android:src="@drawable/girl"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView2"
